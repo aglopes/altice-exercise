@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { HomeComponent } from './pages/home/home.component';
+import { SearchComponent } from './components/search/search.component';
+import { CardComponent } from './components/card/card.component';
+import { CardsComponent } from './components/cards/cards.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     PaginationComponent,
-    HomeComponent
+    HomeComponent,
+    SearchComponent,
+    CardComponent,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
