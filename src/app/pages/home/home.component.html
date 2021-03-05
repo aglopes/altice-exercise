@@ -2,5 +2,5 @@
   <app-navbar [season] = "season"></app-navbar>
   <app-search (searchEvent)="searchChanged($event)"></app-search>
   <app-cards [data] = "pageData" ></app-cards>
-  <app-pagination [npages] = "numberPages" [currentPage] = "pageNumber" [season] = "season" ></app-pagination>
+  <app-pagination [npages] = "numberPages" [currentPage] = "pageNumber" [season] = "season" (paginateEvent)="pageChanged($event)" ></app-pagination>
 </div>

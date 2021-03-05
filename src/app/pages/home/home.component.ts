@@ -85,6 +85,17 @@ export class HomeComponent implements OnInit {
   setupCurrentViewData(){
     this.pageData = this.pagedData[(this.pageNumber-1)];
   }
+  pageChanged(data){
+    //fornot get event to previous and next
+    if (data == -1){//previous event
+      this.pageNumber = this.pageNumber -1;
+    }else if (data == -2){//next event
+      this.pageNumber = this.pageNumber +1;
+    }else{
+      this.pageNumber = data;
+    }
+    this.setupCurrentViewData();
+  }
   searchChanged(data){
     this.search = data;
     this.searchData = this.data.filter((d) => d["title"].includes(this.search) || d["description"].includes(this.search) || d["category"].includes(this.search));
