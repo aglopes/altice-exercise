@@ -24,7 +24,11 @@ export class HomeComponent implements OnInit {
   }
   setupData(){
     this.data = JSON.parse(JSON.stringify(json_data)).default.data;
-    this.searchData = this.data.filter((d) => d["title"].includes(this.search) || d["description"].includes(this.search) || d["category"].includes(this.search));
+    this.searchData = this.data.filter((d) =>
+      d["title"].toString().toLowerCase().includes(this.search.toLowerCase()) ||
+      d["description"].toString().toLowerCase().includes(this.search.toLowerCase()) ||
+      d["category"].toString().toLowerCase().includes(this.search.toLowerCase())
+    );
   }
   setupSeasonData(){
     switch(this.season){
@@ -98,7 +102,11 @@ export class HomeComponent implements OnInit {
   }
   searchChanged(data){
     this.search = data;
-    this.searchData = this.data.filter((d) => d["title"].includes(this.search) || d["description"].includes(this.search) || d["category"].includes(this.search));
+    this.searchData = this.data.filter((d) =>
+      d["title"].toString().toLowerCase().includes(this.search.toLowerCase()) ||
+      d["description"].toString().toLowerCase().includes(this.search.toLowerCase()) ||
+      d["category"].toString().toLowerCase().includes(this.search.toLowerCase())
+    );
     this.filteredData = [];
     this.pagedData = [];
     this.pageData = [];
