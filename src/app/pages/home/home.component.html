@@ -1,6 +1,6 @@
-<div class="container">
-  <app-navbar></app-navbar>
-  <app-search></app-search>
-  <app-cards [data] = "data" ></app-cards>
-  <app-pagination></app-pagination>
+<div class="container py-0">
+  <app-navbar [season] = "season"></app-navbar>
+  <app-search (searchEvent)="searchChanged($event)"></app-search>
+  <app-cards [data] = "pageData" ></app-cards>
+  <app-pagination [npages] = "numberPages" [currentPage] = "pageNumber" [season] = "season" ></app-pagination>
 </div>

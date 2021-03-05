@@ -4,13 +4,3 @@
 .search{
     margin: 20px 0;
 }
-.card.card-vertical {
-    flex-direction: row;
-}
-.card.card-vertical > img{
-    flex: 0;
-    height: 200px;
-}
-.pagination {
-    margin-top: 20px;
-}

@@ -1,5 +1,5 @@
-<div class="row pb-2">
+<div class="row pb-1">
   <div class="search input-group col-12">
-    <input type="text" class="form-control" placeholder="search">
+    <input type="text" class="form-control" placeholder="search" (input)="onSearchChange($event.target.value)" value="">
   </div>
 </div>

@@ -1,11 +1,15 @@
-<div class="row py-2">
+<div class="row py-1">
   <nav class="col-12" aria-label="page navigation">
     <ul class="pagination">
-      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      <li class="page-item">
+        <a class="page-link" *ngIf="currentPage > 1" [routerLink]="['']" [queryParams]="{ 'page': pages[currentPage-1] - 1, 'season': season }">Previous</a>
+      </li>
+      <li *ngFor="let page of pages" class="page-item" [ngClass]="{'active': page === currentPage}">
+        <a class="page-link" [routerLink]="['']" [queryParams]="{ 'page': page, 'season': season}">{{ page }}</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" *ngIf="currentPage < pages.length" [routerLink]="['']" [queryParams]="{ 'page': pages[currentPage], 'season': season }">Next</a>
+      </li>
     </ul>
   </nav>
 </div>
